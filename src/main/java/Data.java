@@ -2,8 +2,6 @@ public class Data {
     private final double amount;
     private final String unit;
     private final int speed;
-    private double toMegabytes;
-    private double downloadSeconds;
 
 
     //    Constructor
@@ -16,6 +14,7 @@ public class Data {
 
     //    Class methods
     public double convertToMegabytes() {
+        double toMegabytes;
         switch (unit) {
             case "bytes" -> toMegabytes = (amount / 1024) / 1024;
             case "kilobytes" -> toMegabytes = amount / 1024;
@@ -27,8 +26,7 @@ public class Data {
     }
 
     public double calculateDownloadTime() {
-        downloadSeconds = convertToMegabytes() / (speed / 8.0);
-        return downloadSeconds;
+        return convertToMegabytes() / (speed / 8.0);
     }
 
     public String getFormattedDownloadTime() {
