@@ -19,6 +19,6 @@ public class Main {
         newData.calculateDownloadTime();
 
         //Print out the data Object with your toString();
-        System.out.println(newData.toString());
+        System.out.println(newData);
     }
 }
